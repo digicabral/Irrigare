@@ -79,9 +79,56 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>1. Configuração do Ambiente</h1>
-                        <p>A irrigação Manual funciona como um controle remoto. Basta apenas selecionar a válvula que foi cadastrada na aba de configurações e pressionar o botão "Ligar" para ativar a válvula solenóide e liberar a passagem de água.</p>
-                        <p>A válvula ficará ativa até que o usuário pressione o botão "Desliga".</p>
-                        <p>Se houver falta de energia elétrica, a válvula automaticamente se fecha devido à sua forma de funcionamento.</p>
+                        <p>O passo crucial para o funcionamento correto do sistema como um todo é a configuração do ambiente físico.</p>
+                        <p>Toda a parte de automação de irrigação depende diretamente deste ambiente, porém as funcionalidades de gestão podem ser utilizadas normalmente sem o mesmo.</p>
+                        <p>Os itens necessários para isto são:</p>
+                        <ol>
+                          <li>Placa Arduino
+                            <p>
+                              A placa Arduino é utilizada para executar um código que é responsável pelo recebimento das informações vindas do dispositivo Android.
+                              Estas informações são processadas e liberam um comando de ação para o circuito.
+                            </p>
+                          </li>
+                          <li>Circuito Irrigare
+                            <p>
+                              O circuito Irrigare é alimentado com energia elétrica pelo Arduino. Realizando as ações que foram solicitadas pelo Arduino,
+                              o sistema ativa ou inativa uma válvula solenóide conectada ao circuito.
+                            </p>
+                          </li>
+                          <li>Válvula Solenóide
+                            <p>
+                              A válvula solenóide utilizada neste sistema foi uma válvula solenóide de diâmetro de passagem de água 3/4" e ativada por corrente elétrica 12VDC.
+                            </p>
+                          </li>
+                          <li>Roteador Wireless
+                            <p>
+                              O Roteador realiza a conexão entre o dispositivo Android e o Arduino, a comunicação é estabelecida através da rede.
+                            </p>
+                          </li>
+                          <li>Cabo de Rede RJ45
+                            <p>
+                                O cabo de rede é utilizado para conectar o roteador à placa Arduino.
+                            </p>
+                          </li>
+                        </ol>
+                        <p>
+                          Após o ambiente físico estar montado, é necessário realizar o upload do sistema para a placa Arduino.
+                          Antes de enviar o sistema o endereço IP da placa Arduino deve ser definido de acordo com a faixa de IP da rede LAN.
+                        </p>
+                        <p>
+                          Com o endereço de IP definido, o usuário deve abrir o aplicativo Android navegar até o item "Configurações",
+                          preencher o campo IP com o endereço que foi definido na placa Arduino e clicar no botão "Salvar".
+                        </p>
+                        <p>O próximo passo é realizar o cadastro da válvula no aplicativo Android, acessando o item "Cadastro de válvulas".
+                          Nesta tela é necessário preencher os campos com o nome da válvula, o campo opcional "Local" e atenção ao campo Identificador Físico.
+                          No campo identificador físico é necessário apontar a porta física cuja a válvula está conectada.
+                        </p>
+                        <p>
+                          Devido às limitações físicas do circuito, podem ser definidas no máximo 5 válvulas no cadastro.
+                        </p>
+                        <p>
+                          Com estas configurações realizadas o sistema está pronto para ser utilizado.
+                        </p>
                         <a href="../index.html" class="btn btn-default" id="btn-previous">Anterior</a>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Indice</a>
                         <a href="irrigacao_manual.html" class="btn btn-default" id="btn-next">Próximo</a>
